@@ -38,7 +38,7 @@ export default defineComponent({
 </script>
 
 <template>
-    <div>
+    <main>
         <form @submit.prevent class="w-full mb-6 flex flex-col">
             <div class="flex flex-wrap -mx-3 gap-3 md:gap-0">
                 <div class="w-full md:w-1/2 px-3">
@@ -82,5 +82,5 @@ export default defineComponent({
                 @onPageChange="changePage($event)"
             ></o-pagination>
         </div>
-    </div>
+    </main>
 </template>

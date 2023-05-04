@@ -43,7 +43,7 @@ export default defineComponent({
 </script>
 
 <template>
-    <div>
+    <main>
         <router-link :to="{ name: 'characters' }">
             <a-button @click="$router.go(-1)"> Go back </a-button>
         </router-link>
@@ -106,5 +106,5 @@ export default defineComponent({
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 </template>
