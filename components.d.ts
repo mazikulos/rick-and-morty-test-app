@@ -10,11 +10,8 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AButton: typeof import('./src/components/global/ui/AButton.vue')['default']
-    AIcon: typeof import('./src/components/global/AIcon.vue')['default']
     AInput: typeof import('./src/components/global/ui/AInput.vue')['default']
     ASelect: typeof import('./src/components/global/ui/ASelect.vue')['default']
-    CharactersList: typeof import('./src/components/global/ui/CharactersList.vue')['default']
-    IconUnknown: typeof import('./src/components/global/icons/IconUnknown.vue')['default']
     OPagination: typeof import('./src/components/global/ui/OPagination.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
