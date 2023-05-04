@@ -57,7 +57,7 @@ export default defineComponent({
             >
                 <div class="flex border-b border-gray-200 mb-5 justify-between items-center pb-3">
                     <character-status :status="character.status" />
-                    <p class="mb-0 font-normal text-gray-700 dark:text-gray-400">
+                    <p class="mb-0 font-normal text-gray-700 ">
                         created at: {{ character.created.slice(0, 10) }}
                     </p>
                 </div>
@@ -67,11 +67,11 @@ export default defineComponent({
                     </figure>
                     <div class="flex flex-col p-4 leading-normal col-span-1 md:col-span-2">
                         <h5
-                            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 "
                         >
                             {{ character.name }}
                         </h5>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                        <p class="mb-3 font-normal text-gray-700 ">
                             {{ description }}
                         </p>
                     </div>
@@ -81,7 +81,7 @@ export default defineComponent({
             <div
                 class="mt-5 flex flex-col bg-white border border-gray-200 rounded-lg shadow p-5"
             >
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
                     Details
                 </h5>
                 <!-- todo: make component -->

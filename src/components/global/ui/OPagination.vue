@@ -36,7 +36,7 @@ export default defineComponent({
         <ul class="list-style-none flex items-center gap-3">
             <li>
                 <span
-                    class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white cursor-pointer"
+                    class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 "
                     :class="[
                         { disabled: !pagination.prev },
                         { 'cursor-pointer': pagination.prev },
@@ -62,7 +62,7 @@ export default defineComponent({
             </li>
             <li>
                 <span
-                    class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white cursor-pointer"
+                    class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 "
                     :class="[
                         { disabled: !pagination.next },
                         { 'cursor-pointer': pagination.next },
