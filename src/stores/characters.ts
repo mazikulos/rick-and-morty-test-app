@@ -86,10 +86,6 @@ export const useCharactersStore = defineStore('characters', {
 
             this.fetchCharacters()
         },
-
-        setQueryStatus(value: string): void {
-            console.log(value)
-        },
         resetQuery(): void {
             if (this.pagination) this.pagination.currentPage = 1
 
