@@ -86,23 +86,29 @@ export default defineComponent({
                 </h5>
                 <!-- todo: make component -->
                 <div class="divide-y divide-slate-200">
-                    <div class="py-1 flex justify-between">
-                        <span>Status:</span> {{ character.status }}
+                    <div class="py-1 gap-x-2 flex justify-between">
+                        <span>Status:</span>
+                        <span class="text-right">{{ character.status }}</span>
                     </div>
-                    <div class="py-1 flex justify-between">
-                        <span>Gender:</span> {{ character.gender }}
+                    <div class="py-1 gap-x-2 flex justify-between">
+                        <span>Gender:</span>
+                        <span class="text-right">{{ character.gender }}</span>
                     </div>
-                    <div class="py-1 flex justify-between">
-                        <span>Episodes:</span> {{ character.episode.length }}
+                    <div class="py-1 gap-x-2 flex justify-between">
+                        <span>Episodes:</span>
+                        <span class="text-right">{{ character.episode.length }}</span>
                     </div>
-                    <div class="py-1 flex justify-between">
-                        <span>Species:</span> {{ character.species }}
+                    <div class="py-1 gap-x-2 flex justify-between">
+                        <span>Species:</span>
+                        <span class="text-right">{{ character.species }}</span>
                     </div>
-                    <div class="py-1 flex justify-between">
-                        <span>Origin:</span> {{ character.origin.name }}
+                    <div class="py-1 gap-x-2 flex justify-between">
+                        <span>Origin:</span>
+                        <span class="text-right">{{ character.origin.name }}</span>
                     </div>
-                    <div class="py-1 flex justify-between">
-                        <span>Location:</span> {{ character.location.name }}
+                    <div class="py-1 gap-x-2 flex justify-between">
+                        <span>Location:</span>
+                        <span class="text-right">{{ character.location.name }}</span>
                     </div>
                 </div>
             </div>
