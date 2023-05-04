@@ -14,11 +14,11 @@ export default defineComponent({
         const statusClass = computed(() => {
             switch (props.status.toLowerCase()) {
                 case EStatus.Dead:
-                    return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300'
+                    return 'bg-red-100 text-red-800'
                 case EStatus.Alive:
-                    return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
+                    return 'bg-green-100 text-green-800'
                 case EStatus.Unknown:
-                    return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300'
+                    return 'bg-yellow-100 text-yellow-800'
                 default:
                     return ''
             }

@@ -15,6 +15,7 @@ export default defineComponent({
         const route = useRoute()
 
         onMounted(() => {
+            console.log(window.history)
             characters.fetchCharacter(+route.params.id)
         })
 
@@ -52,7 +53,7 @@ export default defineComponent({
         <div v-else-if="!character">Not found</div>
         <div v-else>
             <div
-                class="flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-5"
+                class="flex flex-col bg-white border border-gray-200 rounded-lg shadow p-5"
             >
                 <div class="flex border-b border-gray-200 mb-5 justify-between items-center pb-3">
                     <character-status :status="character.status" />
@@ -78,7 +79,7 @@ export default defineComponent({
             </div>
 
             <div
-                class="mt-5 flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-5"
+                class="mt-5 flex flex-col bg-white border border-gray-200 rounded-lg shadow p-5"
             >
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Details
