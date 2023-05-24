@@ -13,7 +13,13 @@ export default defineComponent({
         },
     },
     setup: (props, { emit }) => {
-        function onPageChange(page: number) {
+        function onPageChange(page: number, event?: Event) {
+            if (event?.type === 'keyup') {
+                const targetElement = event.target as HTMLElement
+                targetElement.blur()
+                return
+            }
+
             if (page < 1) {
                 page = 1
             }
@@ -25,7 +31,7 @@ export default defineComponent({
         }
 
         return {
-            onPageChange,
+            onPageChange
         }
     },
 })
@@ -48,9 +54,9 @@ export default defineComponent({
             </li>
             <a-input
                 :inputClass="'w-16 text-center'"
-                :value="pagination.currentPage.toString()"
+                :modelValue="pagination.currentPage.toString()"
                 :onlyNumbers="true"
-                @onChange="onPageChange($event)"
+                @onChange="onPageChange($event.target.value, $event)"
             />
             <li
                 v-if="pagination.pages"

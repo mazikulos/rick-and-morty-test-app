@@ -11,7 +11,9 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AButton: typeof import('./src/components/global/ui/AButton.vue')['default']
     AInput: typeof import('./src/components/global/ui/AInput.vue')['default']
+    AInput2: typeof import('./src/components/global/ui/AInput2.vue')['default']
     ASelect: typeof import('./src/components/global/ui/ASelect.vue')['default']
+    copy: typeof import('./src/components/global/ui/AInput copy.vue')['default']
     OPagination: typeof import('./src/components/global/ui/OPagination.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

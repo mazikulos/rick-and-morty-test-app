@@ -1,8 +1,9 @@
 <script lang="ts">
-import { onMounted, defineComponent } from 'vue'
+import { onMounted, defineComponent, watch } from 'vue'
 import { useCharactersStore } from '@/stores/characters'
 import { useRouter } from 'vue-router'
 import CharactersList from '@/components/characters/CharactersList.vue'
+import { debounce } from 'lodash'
 
 const characters = useCharactersStore()
 
@@ -28,6 +29,25 @@ export default defineComponent({
             router.push({ name: 'character', params: { id: id.toString() } })
         }
 
+        const debouncedSearch = debounce(()=> {
+            characters.fetchCharacters()
+        }, 500)
+
+        watch(
+            () => characters.query,
+            () => {
+                if (characters.pagination) characters.pagination.currentPage = 1
+                if (Object.values(characters.query).every((v) => !v)) {
+                    characters.fetchCharacters()
+                } else {
+                    debouncedSearch()
+                }
+            }, {
+                deep: true,
+                immediate: false,
+            }
+        )
+
         return {
             characters,
             changePage,
@@ -45,8 +65,7 @@ export default defineComponent({
                     <a-input
                         :inputClass="'w-full'"
                         placeholder="Name"
-                        :value="characters.query.name"
-                        @onInput="event => characters.setQuery('name', event)"
+                        v-model="characters.query.name"
                     />
                 </div>
 
@@ -55,7 +74,7 @@ export default defineComponent({
                         placeholder="Status"
                         :options="characters.statusOptions"
                         :initOption="'any'"
-                        @onChange="event => characters.setQuery('status', event)"
+                        v-model="characters.query.status"
                     />
                 </div>
             </div>
