@@ -3,9 +3,9 @@ import { defineComponent, PropType } from 'vue'
 
 export default defineComponent({
     name: 'AInput',
-    emits: ['onInput', 'onChange'],
+    emits: ['update:modelValue', 'onChange'],
     props: {
-        value: {
+        modelValue: {
             type: String as PropType<string>,
             default: '',
         },
@@ -58,10 +58,10 @@ export default defineComponent({
         :class="[inputClass]"
         type="text"
         :placeholder="placeholder"
-        :value="value"
+        :value="modelValue"
         @keydown="allowOnlyNumbers"
-        @keyup.enter="$emit('onChange', (<HTMLInputElement>$event.target).value)"
-        @input="$emit('onInput', (<HTMLInputElement>$event.target).value)"
-        @change="$emit('onChange', (<HTMLInputElement>$event.target).value)"
+        @keyup.enter="$emit('onChange', $event)"
+        @change.stop="$emit('onChange', $event)"
+        @input="$emit('update:modelValue', (<HTMLInputElement>$event.target).value)"
     />
 </template>

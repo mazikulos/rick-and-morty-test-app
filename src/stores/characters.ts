@@ -68,33 +68,12 @@ export const useCharactersStore = defineStore('characters', {
                 currentPage,
             }
         },
-        setQuery(field: keyof typeof this.query, value: string): void {
-            if (this.pagination) this.pagination.currentPage = 1
-
-            if (field in this.query) {
-                if (field === 'status') {
-                    const enumValues = Object.values(EStatus) as string[]
-                    if (enumValues.includes(value)) {
-                        this.query[field] = value as EStatus
-                    } else {
-                        this.query[field] = undefined
-                    }
-                } else {
-                    this.query[field] = value || undefined
-                }
-            }
-
-            this.fetchCharacters()
-        },
         resetQuery(): void {
             if (this.pagination) this.pagination.currentPage = 1
-
             this.query = {
                 name: undefined,
                 status: undefined,
             }
-
-            this.fetchCharacters()
         },
     },
 })

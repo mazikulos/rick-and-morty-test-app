@@ -2,9 +2,9 @@
 import { defineComponent, PropType } from 'vue'
 export default defineComponent({
     name: 'ASelect',
-    emits: ['onChange'],
+    emits: ['update:modelValue'],
     props: {
-        value: {
+        modelValue: {
             type: String as PropType<string>,
             default: '',
         },
@@ -30,16 +30,17 @@ export default defineComponent({
         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
     >
         {{ placeholder }}
+        {{ modelValue }}
     </label>
     <div class="relative">
         <select
-            @change="$emit('onChange', (<HTMLInputElement>$event.target).value)"
+            @change="$emit('update:modelValue', (<HTMLInputElement>$event.target).value)"
             class="block appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-gray-500"
         >
             <option v-if="initOption" value="">{{ initOption }}</option>
             <option
                 v-for="(option, oIdx) in options"
-                :selected="option === value"
+                :selected="option === modelValue"
                 :value="option"
                 :key="oIdx"
             >
